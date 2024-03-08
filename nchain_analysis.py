@@ -41,7 +41,6 @@ cfg = {
   'imgType': 'png',
   'estimator': 'mean',
   'ci': ('ci', 95),
-  # 'ci': 'se',
   'x_format': None,
   'y_format': None,
   'xlim': {'min': None, 'max': None},
@@ -58,8 +57,6 @@ def analyze(exp, runs=1):
   set_one_thread()
   cfg['exp'] = exp
   cfg['runs'] = runs
-  #if 'lmc' in exp:
-  #  cfg['sweep_keys'] = ['env/cfg/n', 'optimizer/name', 'optimizer/kwargs/lr', 'optimizer/kwargs/noise_scale', 'optimizer/kwargs/a', 'agent/update_num', 'target_update_steps']
   plotter = Plotter(cfg)
 
   plotter.csv_results('Test', get_csv_result_dict, get_process_result_dict)

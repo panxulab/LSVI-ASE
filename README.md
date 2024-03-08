@@ -4,9 +4,9 @@ This repository contains the source code for the paper titled "More Efficient Ra
 
 ## Installation Requirements
 
-- Python version 3.8 or higher
-- [Tianshou](https://github.com/thu-ml/tianshou) library
-- [Envpool](https://github.com/sail-sg/envpool) library
+- Python: >= 3.8
+- [Tianshou](https://github.com/thu-ml/tianshou): ==0.4.10
+- [Envpool](https://github.com/sail-sg/envpool): ==0.6.6
 - Additional dependencies can be found in `requirements.txt`.
 
 ## Running Experiments

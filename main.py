@@ -12,9 +12,7 @@ def main(argv):
   parser.add_argument('--config_idx', type=int, default=1, help='Configuration index')
   parser.add_argument('--slurm_dir', type=str, default='', help='slurm tempory directory')
   args = parser.parse_args()
-  
-  # args.config_idx += 10000
-  
+    
   sweeper = Sweeper(args.config_file)
   cfg = sweeper.generate_config_for_idx(args.config_idx)
   

@@ -41,7 +41,6 @@ cfg = {
   'imgType': 'png',
   'estimator': 'mean',
   'ci': ('ci', 95),
-  # 'ci': 'se',
   'x_format': None,
   'y_format': None,
   'xlim': {'min': None, 'max': None},
@@ -58,15 +57,13 @@ def analyze(exp, runs=1):
   set_one_thread()
   cfg['exp'] = exp
   cfg['runs'] = runs
-  # cfg['merged'] = False
   plotter = Plotter(cfg)
 
   plotter.csv_results('Test', get_csv_result_dict, get_process_result_dict)
   plotter.plot_results(mode='Test', indexes='all')
-  # plotter.plot_results(mode='Test', indexes=[58,130,202,274,346])
 
 if __name__ == "__main__":
-  exp, runs = 'atari5_aulmc', 5
+  exp, runs = 'atari8_aulmc', 5
   unfinished_index(exp, runs=runs)
   memory_info(exp, runs=runs)
   time_info(exp, runs=runs)
