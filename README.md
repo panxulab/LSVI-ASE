@@ -1,4 +1,4 @@
-# Efficient Randomized Exploration in RL with Approximate Sampling
+# More Efficient Randomized Exploration in RL with Approximate Sampling
 
 This repository contains the source code for the paper titled "More Efficient Randomized Exploration for Reinforcement Learning via Approximate Sampling."
 
