@@ -1,0 +1,1 @@
+parallel --eta --ungroup python main.py --config_file ./configs/qbert_fg_aulmc.json --config_idx {1} ::: $(seq 1 144 720)
