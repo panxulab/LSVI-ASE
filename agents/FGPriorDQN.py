@@ -8,7 +8,7 @@ from tianshou.trainer import offpolicy_trainer
 
 from components.dqn.network import DQNNet, smallDQNNet
 from components.fgprior_dqn.policy import FGPriorDQNPolicy
-from components.fgprior_dqn import optim
+from components.lmc_dqn import optim
 
 
 class FGPriorDQN(BaseAgent):

@@ -1,15 +1,13 @@
 {
     "env": [{
       "name": ["NChain-v1"],
-      "cfg": [{"n": [25]}],
+      "cfg": [{"n": [25, 50, 75, 100]}],
       "train_num": [1],
       "test_num": [20]
     }],
     "device": ["cpu"],
     "agent": [{
-      "name": ["FGPriorDQN"], 
-      "update_num": [4],
-      "eta": [0.01, 0.1, 1],
+      "name": ["LMCDQN"], "update_num": [4],
       "is_double": [false]
     }],
     "save_model": [false],
@@ -29,9 +27,9 @@
       {
         "name": ["aULMC"],
         "kwargs": [{
-          "lr": [1e-2,1e-3],
-          "noise_scale": [1e-4,1e-5,1e-6], 
-          "a": [1, 0.1,0.01],
+          "lr": [1e-2, 1e-3],
+          "noise_scale": [1e-4, 1e-5, 1e-6],
+          "a": [1, 0.1, 0.01],
           "gamma": [0.01, 0.1, 1]
         }]
       }

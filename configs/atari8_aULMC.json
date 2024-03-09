@@ -1,7 +1,7 @@
 {
     "env": [
       {
-        "name": ["FreewayNoFrameskip-v4"],
+        "name": ["AlienNoFrameskip-v4", "FreewayNoFrameskip-v4", "GravitarNoFrameskip-v4", "HeroNoFrameskip-v4", "QbertNoFrameskip-v4", "VentureNoFrameskip-v4", "PitfallNoFrameskip-v4", "SolarisNoFrameskip-v4"],
         "scale_obs": [0],
         "train_num": [1],
         "test_num": [5]
@@ -9,9 +9,7 @@
     ],
     "device": ["cuda"],
     "agent": [{
-      "name": ["FGPriorDQN"], 
-      "update_num": [1],
-      "eta": [0.001, 0.01],
+      "name": ["LMCDQN"], "update_num": [1],
       "is_double": [true]
     }],
     "save_model": [false],
@@ -30,10 +28,8 @@
     "optimizer": [{
         "name": ["aULMC"],
         "kwargs": [{
-          "lr": [1e-2,1e-3], 
-          "noise_scale": [1e-4,1e-5,1e-6], 
-          "a": [0.1,0.01],
-          "gamma": [10]
+          "lr": [1e-2,1e-3,1e-4], "noise_scale": [1e-4,1e-5,1e-6], "a": [0.1,0.01],
+          "gamma": [1, 10]
         }]
       }],
     "discount": [0.99],

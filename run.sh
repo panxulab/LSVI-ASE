@@ -1,1 +1,1 @@
-parallel --eta --ungroup python main.py --config_file ./configs/qbert_fg_aulmc.json --config_idx {1} ::: $(seq 1 144 720)
+parallel --eta --ungroup python main.py --config_file ./configs/atari8_fg_aULMC.json --config_idx {1} ::: $(seq 1 1728 8640)
