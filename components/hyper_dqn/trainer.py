@@ -138,7 +138,6 @@ def offpolicy_trainer(
             losses = policy.update(batch_size, train_collector.buffer)
             for k in losses.keys():
               stat[k].add(losses[k])
-              # losses[k] = stat[k].get()
               data[k] = f"{stat[k].get():.3f}"
             losses["gradient_step"] = gradient_step
             logger.log_update_data(losses, env_step)

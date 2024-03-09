@@ -60,7 +60,6 @@ def analyze(exp, runs=1):
   plotter = Plotter(cfg)
 
   plotter.csv_results('Test', get_csv_result_dict, get_process_result_dict)
-  # plotter.plot_results(mode='Test', indexes='all')
 
 
 if __name__ == "__main__":

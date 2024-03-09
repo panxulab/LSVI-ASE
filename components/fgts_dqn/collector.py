@@ -37,8 +37,6 @@ class FGTSCollector(Collector):
       buffer = VectorReplayBuffer(self.env_num, self.env_num)
     elif isinstance(buffer, ReplayBufferManager):
       assert buffer.buffer_num >= self.env_num
-      # if isinstance(buffer, CachedReplayBuffer):
-      #   assert buffer.cached_buffer_num >= self.env_num
     else:  # ReplayBuffer or PrioritizedReplayBuffer
       assert buffer.maxsize > 0
       if self.env_num > 1:

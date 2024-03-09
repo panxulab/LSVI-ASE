@@ -11,8 +11,6 @@ from torch.optim.rmsprop import *
 from torch.optim.optimizer import *
 
 from components.langevin_dqn.optim import *
-#import scipy.sparse as sp
-#import sksparse.cholmod as cholmod
 
 
 class aSGLD(Adam):

@@ -98,7 +98,6 @@ class HyperDQNPolicy(DQNPolicy):
   ) -> torch.Tensor:
     batch = buffer[indice]  # batch.obs_next: s_{t+n}
     if self._target:
-      # target_Q = Q_old(s_, argmax(Q_new(s_, *)))
       a = self._model_forward(batch, z, input="obs_next").act  # (None, bz)
       with torch.no_grad():
         target_q = self._model_forward(

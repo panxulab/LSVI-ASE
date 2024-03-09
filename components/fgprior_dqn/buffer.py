@@ -36,17 +36,6 @@ class FGPriorReplayBuffer(ReplayBuffer):
     "obs_first", "obs", "act", "rew", "terminated", "truncated", "obs_next", "info", "policy"
   )
 
-  # def __init__(
-  #   self,
-  #   size: int,
-  #   stack_num: int = 1,
-  #   ignore_obs_next: bool = False,
-  #   save_only_last_obs: bool = False,
-  #   sample_avail: bool = False,
-  #   **kwargs: Any,  # otherwise PrioritizedVectorReplayBuffer will cause TypeError
-  # ) -> None:
-  #   super().__init__(size, stack_num, ignore_obs_next, save_only_last_obs, sample_avail, **kwargs)
-
   @classmethod
   def from_data(
     cls, obs_first: h5py.Dataset, obs: h5py.Dataset, act: h5py.Dataset, rew: h5py.Dataset,

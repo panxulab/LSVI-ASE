@@ -37,8 +37,6 @@ class FGPriorCollector(Collector):
       buffer = VectorReplayBuffer(self.env_num, self.env_num)
     elif isinstance(buffer, ReplayBufferManager):
       assert buffer.buffer_num >= self.env_num
-      # if isinstance(buffer, CachedReplayBuffer):
-      #   assert buffer.cached_buffer_num >= self.env_num
     else:  # ReplayBuffer or PrioritizedReplayBuffer
       assert buffer.maxsize > 0
       if self.env_num > 1:
@@ -229,7 +227,7 @@ class FGPriorCollector(Collector):
       # get bounded and remapped actions first (not saved into buffer)
       action_remap = self.policy.map_action(self.data.act)
       # step in env
-      result = self.env.step(action_remap, ready_env_ids)  # type: ignore
+      result = self.env.step(action_remap, ready_env_ids)
       if len(result) == 5:
         obs_next, rew, terminated, truncated, info = result
         done = np.logical_or(terminated, truncated)

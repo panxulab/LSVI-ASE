@@ -13,20 +13,13 @@ from tianshou.data import VectorReplayBuffer
 
 class FGTSDQN(BaseAgent):
   '''
-  Implementation of Ensemble Langevin DQN
+  Implementation of FGTS DQN
   '''
   def __init__(self, cfg):
     super().__init__(cfg)
     # Create Q network
     self.net = self.createNN()
-    # # Set optimizer
-    # assert self.cfg['optimizer']['name'] == 'EnsembleLangevinAdam', 'Only EnsembleLangevinAdam is supported for Ensemble Langevin DQN.'
-    # self.optimizer = EnsembleLangevinAdam(
-    #   self.net.parameters(),
-    #   replay_size = self.cfg['buffer_size']*self.cfg['env']['train_num'],
-    #   **self.cfg['optimizer']['kwargs']
-    # )
-     # Set optimizer
+    # Set optimizer
     assert self.cfg['optimizer']['name'] in ['LangevinAdam', 'LangevinAdam1', 'LangevinAdam2', 'pSGLD', 'mSGLD', 'aSGLD', 'SGLD', 'aSGLD2', 'aSGLD3'], \
      f"{self.cfg['optimizer']['name']} is not supported for LMC DQN."
     if self.cfg['optimizer']['name'] == 'aSGLD3':

@@ -83,7 +83,6 @@ class Plotter(object):
       # Moving average
       if self.rolling_score_window > 0:
         for i in range(len(xs)):
-          # xs[i] = xs[i][self.rolling_score_window-1:]
           ys[i] = moving_average(ys[i], self.rolling_score_window)
       # Do symetric EMA to get new x's and y's
       low  = max(x[0] for x in xs)
@@ -99,7 +98,6 @@ class Plotter(object):
       if self.rolling_score_window > 0:
         for i in range(len(result_list)):
           x, y = result_list[i][self.x_label].to_numpy(), result_list[i][self.y_label].to_numpy()
-          # x = x[self.rolling_score_window-1:]
           y = moving_average(y, self.rolling_score_window)
           result_list[i].loc[:, self.x_label] = new_x
           result_list[i].loc[:, self.y_label] = new_y
@@ -174,8 +172,7 @@ class Plotter(object):
         errorbar=self.ci, err_kws={'alpha':0.5},
         linewidth=1.0, label=data[i][0][self.hue_label][0]
       )
-    
-    # ax.set_title(title)
+
     ax.legend(loc=self.loc)
     ax.set_xlabel(self.x_label)
     ax.set_ylabel(self.y_label)

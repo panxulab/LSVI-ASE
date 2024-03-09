@@ -58,20 +58,6 @@ class FGPriorDQNPolicy(DQNPolicy):
   ) -> Batch:
       """Compute action over the given batch data.
 
-      If you need to mask the action, please add a "mask" into batch.obs, for
-      example, if we have an environment that has "0/1/2" three actions:
-      ::
-
-          batch == Batch(
-              obs=Batch(
-                  obs="original obs, with batch_size=1 for demonstration",
-                  mask=np.array([[False, True, False]]),
-                  # action 1 is available
-                  # action 0 and 2 are unavailable
-              ),
-              ...
-          )
-
       :return: A :class:`~tianshou.data.Batch` which has 3 keys:
 
           * ``act`` the action.
@@ -121,10 +107,6 @@ class FGPriorDQNPolicy(DQNPolicy):
     sample_size: int, buffer: Optional[ReplayBuffer], **kwargs: Any
     ) -> Dict[str, Any]:
     """Update the policy network and replay buffer.
-    It includes 3 function steps: process_fn, learn, and post_process_fn. In
-    addition, this function will change the value of ``self.updating``: it will be
-    False before this function and will be True when executing :meth:`update`.
-    Please refer to :ref:`policy_state` for more detailed explanation.
     :param int sample_size: 0 means it will extract all the data from the buffer,
         otherwise it will sample a batch with given sample_size.
     :param ReplayBuffer buffer: the corresponding replay buffer.

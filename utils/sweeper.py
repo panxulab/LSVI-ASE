@@ -219,6 +219,4 @@ if __name__ == "__main__":
       continue
     config_file = os.path.join('../configs/', agent_config)
     sweeper = Sweeper(config_file)
-    # sweeper.print_config_dict(sweeper.config_dicts)
-    # sweeper.print_config_dict(sweeper.generate_config_for_idx(213))
     print(f'Number of total combinations in {agent_config}:', sweeper.config_dicts['num_combinations'])
