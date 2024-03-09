@@ -47,7 +47,7 @@ parallel --eta --ungroup python main.py --config_file ./configs/atari8_fg_aULMC.
 If conducting multiple runs for the same configuration index, increment the index by the total number of combinations. For instance, to perform 5 runs for index `1`:
 
 ```
-for index in 1 1729 3457 5185 6912
+for index in 1 1729 3457 5185 6913
 do
   python main.py --config_file ./configs/atari8_fg_aULMC.json --config_idx $index
 done
